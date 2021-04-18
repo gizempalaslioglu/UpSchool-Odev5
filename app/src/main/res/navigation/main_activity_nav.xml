@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_activity_nav"
+    app:startDestination="@id/anasayfaFragment">
+
+    <fragment
+        android:id="@+id/anasayfaFragment"
+        android:name="com.upschool.upschool_odev5.AnasayfaFragment"
+        android:label="fragment_anasayfa"
+        tools:layout="@layout/fragment_anasayfa" >
+        <action
+            android:id="@+id/toplamaGecis"
+            app:destination="@id/toplamFragment" />
+        <action
+            android:id="@+id/carpimaGecis"
+            app:destination="@id/carpimFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/toplamSonucFragment"
+        android:name="com.upschool.upschool_odev5.ToplamSonucFragment"
+        android:label="fragment_toplamsonuc"
+        tools:layout="@layout/fragment_toplamsonuc" >
+        <argument
+            android:name="toplamasonuc"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/carpimSonucFragment"
+        android:name="com.upschool.upschool_odev5.CarpimSonucFragment"
+        android:label="fragment_carpimsonuc"
+        tools:layout="@layout/fragment_carpimsonuc" >
+        <argument
+            android:name="carpimsonuc"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/toplamFragment"
+        android:name="com.upschool.upschool_odev5.ToplamFragment"
+        android:label="ToplamFragment"
+        tools:layout="@layout/fragment_toplam">
+        <action
+            android:id="@+id/toplamSonucaGecis"
+            app:destination="@id/toplamSonucFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/carpimFragment"
+        android:name="com.upschool.upschool_odev5.CarpimFragment"
+        android:label="CarpimFragment"
+        tools:layout="@layout/fragment_carpim">
+        <action
+            android:id="@+id/carpimSonucaGecis"
+            app:destination="@id/carpimSonucFragment" />
+    </fragment>
+</navigation>
